@@ -7,6 +7,11 @@ class GildedRose {
         this.items = items;
     }
 
+    private void decreaseQuality(Item item) {
+        if (item.quality > 0) {
+            item.quality--;
+    }
+
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (!items[i].name.equals("Aged Brie")
@@ -45,7 +50,7 @@ class GildedRose {
                     if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         if (items[i].quality > 0) {
                             if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                                items[i].quality = items[i].quality - 1;
+                                decreaseQuality(items[i]);
                             }
                         }
                     } else {
